@@ -32,7 +32,7 @@ NuGet パッケージ マネージャーからインストールしてくださ�
 
 ```c#
 // Init
-using var db = new Oracle(ConnectionString);
+using var db = new OracleDatabase(ConnectionString);
 
 // Database Open
 db.Open();

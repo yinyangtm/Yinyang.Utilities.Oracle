@@ -30,8 +30,8 @@ namespace Yinyang.Utilities.Oracle.Core.Test
         [TestMethod]
         public void EasySelect()
         {
-            Oracle.ConnectionString = _connectionString;
-            using (var Oracle = new Oracle(_connectionString))
+            OracleDatabase.ConnectionString = _connectionString;
+            using (var Oracle = new OracleDatabase(_connectionString))
             {
                 var result = Oracle.EasySelect<EntityTest>("select * from yinyang.\"test\" where \"id\" = 1").First();
 
@@ -46,7 +46,7 @@ namespace Yinyang.Utilities.Oracle.Core.Test
         [TestMethod]
         public void ExecuteReaderFirst()
         {
-            using (var Oracle = new Oracle(_connectionString))
+            using (var Oracle = new OracleDatabase(_connectionString))
             {
                 Oracle.Open();
                 Oracle.CommandText = "select * from yinyang.\"test\" where \"id\" = :id";
@@ -64,7 +64,7 @@ namespace Yinyang.Utilities.Oracle.Core.Test
         [TestMethod]
         public void Select()
         {
-            using (var Oracle = new Oracle(_connectionString))
+            using (var Oracle = new OracleDatabase(_connectionString))
             {
                 Oracle.Open();
                 Oracle.CommandText = "select * from yinyang.\"test\" where \"id\" = 1";
@@ -81,7 +81,7 @@ namespace Yinyang.Utilities.Oracle.Core.Test
         [TestMethod]
         public void SelectCount()
         {
-            using (var Oracle = new Oracle(_connectionString))
+            using (var Oracle = new OracleDatabase(_connectionString))
             {
                 Oracle.Open();
                 Oracle.CommandText = "select count(*) from yinyang.\"test\" where \"id\" = 1";
@@ -95,7 +95,7 @@ namespace Yinyang.Utilities.Oracle.Core.Test
         [TestMethod]
         public void Function()
         {
-            using (var Oracle = new Oracle(_connectionString))
+            using (var Oracle = new OracleDatabase(_connectionString))
             {
                 Oracle.Open();
                 Oracle.ChangeCommandType(CommandType.Text);
@@ -115,7 +115,7 @@ namespace Yinyang.Utilities.Oracle.Core.Test
         [TestMethod]
         public void TableRowsCount()
         {
-            using (var Oracle = new Oracle(_connectionString))
+            using (var Oracle = new OracleDatabase(_connectionString))
             {
                 Oracle.Open();
                 Assert.AreEqual(1, Oracle.TableRowsCount("yinyang.\"test\""));

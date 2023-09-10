@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.1;net6;net7</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Oracle Database Connection Utility.</Description>
-    <Version>1.0.0-beta1</Version>
+    <Version>1.0.0-beta2</Version>
     <Authors>Yinyang</Authors>
     <Product>Yinyang Utilities Oracle Database</Product>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>

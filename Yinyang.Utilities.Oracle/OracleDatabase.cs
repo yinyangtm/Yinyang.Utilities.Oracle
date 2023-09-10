@@ -4,9 +4,9 @@ using System.Data;
 using System.Linq;
 using Oracle.ManagedDataAccess.Client;
 
-namespace Yinyang.Utilities.Oracle.Core
+namespace Yinyang.Utilities.Oracle
 {
-    public class Oracle : IDisposable
+    public class OracleDatabase : IDisposable
     {
         private readonly string _connectionString;
         private readonly OracleConnection _sqlConnection;
@@ -30,7 +30,7 @@ namespace Yinyang.Utilities.Oracle.Core
         /// <summary>
         ///     Constructor (Use ConnectionString property)
         /// </summary>
-        public Oracle()
+        public OracleDatabase()
         {
             if (string.IsNullOrEmpty(ConnectionString))
             {
@@ -48,7 +48,7 @@ namespace Yinyang.Utilities.Oracle.Core
         ///     Constructor
         /// </summary>
         /// <param name="connectionString">The connection string that includes the source database name, and other parameters needed to establish the initial connection. The default value is an empty string.</param>
-        public Oracle(string connectionString)
+        public OracleDatabase(string connectionString)
         {
             _connectionString = connectionString;
 
@@ -80,9 +80,9 @@ namespace Yinyang.Utilities.Oracle.Core
         ///     Copy
         /// </summary>
         /// <returns></returns>
-        public Oracle Copy()
+        public OracleDatabase Copy()
         {
-            return new Oracle(_connectionString);
+            return new OracleDatabase(_connectionString);
         }
 
         /// <summary>
